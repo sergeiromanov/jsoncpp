@@ -60,7 +60,7 @@ static Json::String readInputTestFile(const char* path) {
   long const size = ftell(file);
   const auto usize = static_cast<size_t>(size);
   fseek(file, 0, SEEK_SET);
-  char* buffer = new char[size + 1];
+  char* buffer = new char[usize + 1];
   buffer[size] = 0;
   Json::String text;
   if (fread(buffer, 1, usize, file) == usize)
