@@ -94,6 +94,7 @@ endif()
 # Specify compiler features required when compiling a given target.
 # See https://cmake.org/cmake/help/v3.1/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html#prop_gbl:CMAKE_CXX_KNOWN_FEATURES
 # for complete list of features available
+#[[ This breaks MagicLeap build. Compiler id is messed up. Totally unnecessary check for us.
 target_compile_features(jsoncpp_lib PUBLIC
         cxx_std_11 # Compiler mode is aware of C++ 11.
         #MSVC 1900 cxx_alignas # Alignment control alignas, as defined in N2341.
@@ -140,7 +141,7 @@ target_compile_features(jsoncpp_lib PUBLIC
         cxx_variadic_macros # Variadic macros, as defined in N1653.
         cxx_variadic_templates # Variadic templates, as defined in N2242.
 )
-
+]]
 install( TARGETS jsoncpp_lib ${INSTALL_EXPORT}
           RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
           LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
